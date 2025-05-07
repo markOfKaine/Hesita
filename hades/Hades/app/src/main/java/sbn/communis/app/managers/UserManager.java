@@ -1,6 +1,9 @@
 package sbn.communis.app.managers;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+
 import sbn.communis.app.managers.UserManager;
 import sbn.communis.app.bo.User;
 
@@ -18,6 +21,10 @@ public class UserManager {
             instance = new UserManager();
         }
         return instance;
+    }
+
+    public static Set<String> getUsers() {
+        return userDatabase.keySet();
     }
 
     public static User createUser(String username, String password, String email, String phoneNumber, String address) {

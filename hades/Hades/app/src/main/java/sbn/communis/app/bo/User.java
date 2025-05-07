@@ -5,6 +5,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class User {
+    //backend should handle this object
     //private String id;
     private String username;
     private String password;

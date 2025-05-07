@@ -2,14 +2,27 @@ package sbn.communis.app.controllers;
 
 import sbn.communis.app.managers.UserManager;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Set;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
+
+    @GetMapping("getUsers")
+    public String getUsers() {
+        Set<String> users = UserManager.getUsers();
+        return users.toString();
+
+    }
+    
 
     @PostMapping("create")
     public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String email, @RequestParam String phoneNumber, @RequestParam String address) {

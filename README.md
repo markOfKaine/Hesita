@@ -50,3 +50,8 @@ cd frontend
 npm install
 npm run dev
 
+### Backend Setup
+cd hades
+Run springboot project
+hit http://localhost:8080/
+
