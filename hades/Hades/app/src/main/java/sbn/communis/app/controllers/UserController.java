@@ -22,7 +22,6 @@ public class UserController {
         return users.toString();
 
     }
-    
 
     @PostMapping("create")
     public String createUser(@RequestParam String username, @RequestParam String password, @RequestParam String email, @RequestParam String phoneNumber, @RequestParam String address) {

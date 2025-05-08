@@ -30,6 +30,13 @@ A full-stack web application built with modern technologies, leveraging scalable
 - Secure data storage in RDS/Oracle
 - File handling with Amazon S3 buckets
 - Deployed on scalable AWS EC2 instances
+- Messaging system 
+    - Consider using KAFKA messaging bus to handle messages
+- Custom PFPs, upload your img files
+- Intuitive UI, tinder-like, bumble-like
+    - your account name, rating, LFG
+        - LFG (game, rank range, region, accReviewScore)
+
 
 ---
 
