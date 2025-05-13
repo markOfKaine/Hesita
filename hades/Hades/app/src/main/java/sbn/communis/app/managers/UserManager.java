@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 
+import sbn.communis.app.managers.OracleManager;
 import sbn.communis.app.managers.UserManager;
 import sbn.communis.app.bo.User;
 
@@ -33,6 +34,7 @@ public class UserManager {
         }
 
         User newUser = new User(username, password, email, phoneNumber, address);
+        writeUser(username, password, email, phoneNumber, address); //SEE ORACLE MANAGER
         userDatabase.put(username, newUser);
         return newUser;
     }
@@ -41,6 +43,7 @@ public class UserManager {
         if (!userDatabase.containsKey(username)) {
             throw new IllegalArgumentException("User does not exist");
         }
+        deleteUser(username, password); //SEE ORACLE MANAGER
         userDatabase.remove(username);
         return "User deleted successfully";
     }
@@ -53,6 +56,7 @@ public class UserManager {
         if (!user.getPassword().equals(oldPassword)) {
             throw new IllegalArgumentException("Old password is incorrect");
         }
+        updatePassword(username, oldPassword, newPassword);
         user.setPassword(newPassword);
         return "Password changed successfully";
     }
