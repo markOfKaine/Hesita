@@ -56,7 +56,7 @@ public class UserManager {
         if (!user.getPassword().equals(oldPassword)) {
             throw new IllegalArgumentException("Old password is incorrect");
         }
-        updatePassword(username, oldPassword, newPassword);
+        updatePassword(username, oldPassword, newPassword); //SEE ORACLE MANAGER
         user.setPassword(newPassword);
         return "Password changed successfully";
     }
